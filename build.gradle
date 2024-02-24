@@ -1,0 +1,42 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.1'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    //runtimeOnly 'com.h2database:h2' //H2가 아닌 MySQL로 연동할 것이기 때문에 주석 처리
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' // Thymeleaf 추가
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect' // Thymeleaf 추가
+    implementation 'org.springframework.boot:spring-boot-starter-validation' //Refresh Gradle Project 추가
+    
+    //MYSQL 연동할것이므로 의존성 추가
+    implementation 'org.springframework.boot:spring-boot-starter'//mySql의존성 추가
+    runtimeOnly 'com.mysql:mysql-connector-j'//mySql의존성 추가
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'//mySql의존성 추가
+    implementation 'mysql:mysql-connector-java:8.0.23' // MySQL 서버와 일치하는 버전을 사용하십시오
+    
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.1.RELEASE'
+    
+    }
+tasks.named('test') {
+	useJUnitPlatform()
+}
