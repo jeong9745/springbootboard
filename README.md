@@ -6,8 +6,7 @@
 > 
 > Html 5.0, SpringBoot, Spring JPA를 사용해 기본적인 웹페이지를 구현하고,\
 > Get, Post 를 통해 데이터를 DB에 저장하고 불러와 출력하도록 했습니다.
->
-> Html5.0,SpringBoot, Spring JPA를 사용해 
+
 
 > ### 개발 기간 및 인원
 > 23.12.15 ~ 24.01.29 (2주) \
